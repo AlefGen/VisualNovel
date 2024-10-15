@@ -59,6 +59,8 @@ Las contribuciones en este proyecto son libres y bienvenidas. Si deseas contribu
     
    4. Crea un pull request para que tus cambios sean revisados y fusionados con la rama principal.
 
+   5. DIALOGO https://docs.google.com/document/d/1S9RHqRWm81Dbi8b9cbEtq0TIHESNvR7-g_XY-BrqI7g/edit?usp=sharing
+
 ## Créditos
 - **Historia y Diseño:** []
 - **Programación:** []
