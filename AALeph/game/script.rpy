@@ -4,7 +4,7 @@
 # name of the character.
 
 define Pholis = Character("Pholis", Color = "blue")
-define Sombra = Character("???", Color = "grey")
+define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
 
 # Define images
 
@@ -20,11 +20,8 @@ label start:
     # Scence worktrugh start -> cuarto -> call -> end scene
     queue sound  "audio/texto.mp3" 
     
-    
-
     # Initial dialog
     Sombra "Tranquilo..."
-    
     
     stop sound
     queue sound  "audio/texto.mp3"
