@@ -3,51 +3,53 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define VieraT = Character("Viera", Color = "red")
+define Pholis = Character("Pholis", Color = "blue")
+define Sombra = Character("Unknow", Color = "grey")
+
+# Define images
+
+define cuarto = "cuarto.png"
+define puerta_sobra = "puerta"
 
 
-# The game starts here.
-
+#Firts cap Prologue
 label start:
-    image Fondo = "Flow.png"
-    scene Fondo
+
+    # Scence worktrugh start -> cuarto -> call -> end scene
+
+    scene cuarto with fade 
+    
+    # Initial dialog
+    Pholis "Hoy será otro día más..."
+    # Instructions for the player
+    "Pholis puede explorar su cuarto"
+    # First option menu
+    menu:
+        "Mirar alrededor del cuarto":
+            # Function to change of scene would be here
+            Pholis "todo.. aqui.. se siente raro"
+            jump recibir_llamada
+        
+        "Ir al baño":
+            jump recibir_llamada
+    # call interaction
+    label recibir_llamada:
+        show puerta_sobra with dissolve
+        Pholis "quien sera hace mucho no me llaman"
+
+        menu:
+            "Contestar llamada":
+                Pholis "..."
+                Sombra "characters" # Sound effect, error with ***
+                jump fin_escena
+            
+            "No contestar":
+                Pholis "... ... ..."
+                jump fin_escena
+
+        label fin_escena:
+            Pholis "fin de escena"
 
 
-    "El inicio de una gran historia "
-
-    image Viera = "Aloe Veraa.png"
-    show Viera at Position(xalign=0.1, yalign=0.5)
-    with fade
-
-    VieraT "Hola Amigos Soy Viera"
-    VieraT "Este esta es mi historia "
-
-    VieraT "Todo Empezo el otro dia"
-
-    hide Viera
-    with dissolve
-
-
-
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
 
     return
