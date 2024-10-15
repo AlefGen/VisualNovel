@@ -50,9 +50,13 @@ Para instalar y jugar, sigue estos pasos:
 
 Las contribuciones en este proyecto son libres y bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
     1. Clona el repositorio.
+
     2. Crea una rama con tu nombre o el nombre de la función que estás implementando.
+
     3. Realiza los cambios y sube la rama.
+
     **IMPORTANTE** Asegúrate de que tu código cumpla con las guías de estilo y las convenciones del proyecto y que además esté bien documentado, y solo subir el archivo rpy modificado no subir logs errors u rpyb  etc.
+    
     4. Crea un pull request para que tus cambios sean revisados y fusionados con la rama principal.
 
 ## Créditos
