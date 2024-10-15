@@ -11,6 +11,9 @@ define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_
 define cuarto = "images/Habitacion.png"
 define black_screen = "images/black_screen.png"
 
+# Define functions 
+define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5))
+
 
 #Firts cap Prologue
 label start:
@@ -102,9 +105,67 @@ label start:
         #TODO Animation of pholis shutdown his pc in a slam
         "Pholis atemorizado decidio volver a su cama"
         #TODO Scene of fade of the screen and broken clock with some subtle noise of distorsion
-
+        stop music
         "Debug purpose end scene 2"
+        $ renpy.save("prologue") # Save game for avoiding lose information
 
+
+   
+
+    label capitulo_1:
+
+        # Introduction to chapter 1
+        scene black with dissolve  
+        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 1: El descenso{/b}{/font}"
+
+        label escena_1_cap1:
+            "Pholis abre los ojos atemorizado por lo de la vez anterior"
+            show image "images/Habitacion.png"
+            Pholis "¿Acaso debo salir para ver si esto me pasa??"
+            menu:
+                "Salir de la habitacion":
+                    jump habitacion_fuera
+
+                "Quedarse adentro":
+                    jump se_queda_adentro
+
+            label habitacion_fuera:
+                show image "<ciudad>" with fade 
+                Pholis "{i}No recuerdo que el ayer fuese tan distinto al hoy{/i}"
+                #Background music of horror and lonelines
+                jump escnea_2_cap1
+
+
+
+            label se_queda_adentro:
+                Pholis "{i}a para que salir … mejor me quedo aca … como siempre he estado{/i}"
+                # TODO Update de image of the room as the dialog says
+                ". . ."
+                #TODO update 2 of room 
+
+                menu:
+                    "Salir de la habitacion":
+                        jump habitacion_fuera
+
+                    "Quedarse":
+                        jump suicide_ending
+
+                label suicide_ending:
+                    Pholis "{i}Necesito-o{/i}"
+                    #TODO Fade the room image 
+                    scene black with fade
+                    centered_text "{size=+10}{font=fonts/horror_font_2.ttf}{b}No hay escapatoria{/b}{/font}"
+
+                    show text "Logro desbloqueado: Worst Ending suicide " 
+                    pause(3)
+                    #TODO Show suicide image 
+                    $ renpy.load("prologue")
+
+
+            
+
+
+        
 
 
     return
