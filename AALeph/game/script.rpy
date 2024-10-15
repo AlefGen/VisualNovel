@@ -3,14 +3,32 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define VieraT = Character("Viera", Color = "red")
 
 
 # The game starts here.
 
 label start:
+    image Fondo = "Flow.png"
+    scene Fondo
 
-    "Hola Amigos Como Estan"
+
+    "El inicio de una gran historia "
+
+    image Viera = "Aloe Veraa.png"
+    show Viera at Position(xalign=0.1, yalign=0.5)
+    with fade
+
+    VieraT "Hola Amigos Soy Viera"
+    VieraT "Este esta es mi historia "
+
+    VieraT "Todo Empezo el otro dia"
+
+    hide Viera
+    with dissolve
+
+
+
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
