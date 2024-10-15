@@ -8,9 +8,8 @@ define Sombra = Character("???", Color = "grey")
 
 # Define images
 
-define cuarto = "Habitacion.png"
-define puerta_sobra = "puerta"
-
+define cuarto = "images/Habitacion.png"
+define black_screen = "images/black_screen.png"
 
 
 #Firts cap Prologue
@@ -19,10 +18,14 @@ label start:
     $ text_speed = 15
 
     # Scence worktrugh start -> cuarto -> call -> end scene
-    queue sound  "audio/texto.mp3"
+    queue sound  "audio/texto.mp3" 
+    
+    
 
     # Initial dialog
     Sombra "Tranquilo..."
+    
+    
     stop sound
     queue sound  "audio/texto.mp3"
     
@@ -85,6 +88,7 @@ label start:
 
     label escena_2:
         # Only history no player interaction 
+        scene black_screen with fade
         "6 6 6"
         scene cuarto with fade #TODO FIX CUARTO XD
         play music "audio/Track1.ogg"
