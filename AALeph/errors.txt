@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 73: expected 'image_name_component' not found.
-    show "images/Bano.png" with dissolve
-         ^
+File "game/script.rpy", line 21: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+                renpy.music.play("text.mp3, channel="sound")
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Oct 15 03:10:35 2024
+Thu Oct 17 01:00:17 2024

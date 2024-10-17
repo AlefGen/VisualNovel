@@ -11,48 +11,100 @@ define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_
 define cuarto = "images/Habitacion.png"
 define black_screen = "images/black_screen.png"
 
+
 # Define functions 
 define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5))
+
+init python:
+    def callback_Pholis(event, **kwargs):
+        if event == "show":
+            renpy.music.play("texto.mp3", channel=6)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel= 6)
+
+    def callback_Sombra(event, **kwargs):
+        if event == "show":
+            renpy.music.play("texto 2.ogg", channel=6)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel= 6)
+
+    Pholis = Character("Pholis", callback=callback_Pholis)
+    Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
+
+    
+
+    
+
+  
 
 
 #Firts cap Prologue
 label start:
 
-    $ text_speed = 15
+    $ renpy.store.preferences.text_cps = 10
 
     # Scence worktrugh start -> cuarto -> call -> end scene
-    queue sound  "audio/texto.mp3" 
+   
     
     # Initial dialog
     Sombra "Tranquilo..."
     
-    stop sound
-    queue sound  "audio/texto.mp3"
+    
+    
     
     Sombra "...No te preucupes..."
-    stop sound
+    
 
-    queue sound  "audio/texto.mp3"
+    
     
     Sombra "Pronto acabará todo..."
-    stop sound
+    scene black with fade
+   
 
     play movie "images/intro.webm" # k seconds
+    
     # End initial dialog
+    #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
+
+
+    #stop movie
+    #scene black with fade
 
     Sombra "...Pronto seras libre..."
     Sombra "...Pronto............"   
+    scene black with fade
     
 
-    scene cuarto with fade 
-    show image "images/Habitacion.png" # Wake up Pholis
-    play music "audio/Track1.ogg" # Emotional music
     
+    show image "images/Habitacion.png" with fade  # Wake up Pholis
+    play music "audio/Track1.ogg" # Emotional music
+    $ renpy.store.preferences.text_cps = 30
+
      
     # Initial dialog pholis scence
-    Pholis "Hoy será otro día más..."
+    Pholis "Otra vez el mismo sueño de siempre"
+    Pholis "Que es lo que me querrá decir?"
+    Pholis "Ha sido lo mismo por meses… o años?"
+    Pholis "Siempre los mismos lugares y las mismas personas que alguna vez conocí"
+    Pholis  "Pero por mas que le de vueltas, no logro sacarle algún significado"
+    Pholis  "Para este punto ya ni sé si mis recuerdos son reales o de este sueño eterno…"
+    Pholis   "..."
+    Pholis   "Como sea, no vale la pena seguir pensando en ello"
+    show image "images/PC.png" with fade
+
+    Pholis "Que estaba haciendo ayer?"
+    stop music
+    scene black with fade
+
+    play movie "images/Reloj.webm" 
+    
+
+
+
     # Instructions for the player
     "Pholis puede explorar su cuarto"
+    play music "audio/Track1.ogg"
+
     # First option menu
     menu:
         "Mirar alrededor del cuarto":
