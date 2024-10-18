@@ -40,6 +40,7 @@ init python:
 
 #Firts cap Prologue
 label start:
+    jump recibir_llamada
 
     $ renpy.store.preferences.text_cps = 10
 
@@ -76,7 +77,8 @@ label start:
     
 
     
-    show image "images/Habitacion.png" with fade  # Wake up Pholis
+    show image "images/Bed1.png" 
+    
     play music "audio/Track1.ogg" # Emotional music
     $ renpy.store.preferences.text_cps = 30
 
@@ -90,47 +92,74 @@ label start:
     Pholis  "Para este punto ya ni sé si mis recuerdos son reales o de este sueño eterno…"
     Pholis   "..."
     Pholis   "Como sea, no vale la pena seguir pensando en ello"
-    show image "images/PC.png" with fade
+    
 
-    Pholis "Que estaba haciendo ayer?"
-    stop music
-    scene black with fade
-
-    play movie "images/Reloj.webm" 
     
 
 
 
+
+
     # Instructions for the player
-    "Pholis puede explorar su cuarto"
-    play music "audio/Track1.ogg"
+    
+    #"Pholis puede explorar su cuarto"
+    #play music "audio/Track1.ogg"
 
     # First option menu
-    menu:
-        "Mirar alrededor del cuarto":
-            show image "images/Cuarto1.png" with dissolve # Change cuarto
-            Pholis "todo.. aqui.. se siente raro"
-            jump recibir_llamada
+    #menu:
+        #"Mirar alrededor del cuarto":
+            #show image "images/Cuarto1.png" with dissolve # Change cuarto
+            #Pholis "todo.. aqui.. se siente raro"
+            #jump recibir_llamada
         
-        "Ir al baño":
-            show image "images/Bano.png" with dissolve
-            Pholis "..."
-            jump recibir_llamada
+        #"Ir al baño":
+            #show image "images/Bano.png" with dissolve
+            #Pholis "..."
+            #jump recibir_llamada
+    
             
     # call interaction
     label recibir_llamada:
+        show image "images/PC.png" with fade
+        Pholis "Que estaba haciendo ayer?"
+        stop music
+        scene black with fade
+
+        play movie "images/Reloj.webm" 
+        # End initial dialog
+        #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
+
+
+        #stop movie
+        #scene black with fade
+        Pholis "..."
+        show image "images/PC.png" with fade
+        Pholis "Esto e-"
+
+        play sound "audio/Ring.mp3" loop
+        
+
+        Pholis "What is that sound?"
+        show image "images/Bed1.png" with fade
+        play music "audio/Track2.mp3"
+        Pholis "mi... celular?"
+        Pholis "Hacia rato que no lo escuchaba sonar" 
+   
         #TODO Modify this line to ring phone play music audio/ring
-        Pholis "quien sera hace mucho no me llaman"
+        
 
         menu:
             "Contestar llamada":
+                stop sound
                 Pholis "..."
                 Sombra "ahshejeldle" # Sound effect, error with ***
                 #TODO Sound effect strange dialog
                 jump fin_escena
             
-            "No contestar":
+            "Ignorar":
+                
                 Pholis "... ... ..."
+                stop sound
                 jump fin_escena
 
         label fin_escena:
