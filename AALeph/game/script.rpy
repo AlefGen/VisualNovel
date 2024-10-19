@@ -40,7 +40,7 @@ init python:
 
 #Firts cap Prologue
 label start:
-    jump recibir_llamada
+    # jump recibir_llamada # WTF
 
     $ renpy.store.preferences.text_cps = 10
 
@@ -48,7 +48,7 @@ label start:
    
     
     # Initial dialog
-    Sombra "Tranquilo..."
+    Sombra "Tranquilo..."   
     
     
     
@@ -97,7 +97,7 @@ label start:
     
 
 
-
+    jump recibir_llamada
 
 
     # Instructions for the player
