@@ -37,7 +37,7 @@ Para instalar y jugar, sigue estos pasos:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/usuario/fragmentos.git
+   git clone https://github.com/AlefGen/VisualNovel.git 
    ```
 
 2. **Instalar Ren'Py:** Visita [Ren'Py](https://www.renpy.org/) para descargar la versión más reciente del motor. Sigue las instrucciones de instalación según tu sistema operativo.
