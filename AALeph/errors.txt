@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 37: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    .
-    ^
+File "game/script.rpy", line 164: expected statement.
+    Sombra: "Q҉u҉e҉ t҉a҉l҉ b҉r҉o҉,҉ c҉o҉m҉o҉ h҉a҉s҉ e҉s҉t҉a҉d҉o҉"
+          ^
+
+File "game/script.rpy", line 166: expected statement.
+    Sombra: "¿Cuánto ha ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅḑ̢̣͔̤͍̠̯̏̈́̅̒̇͛̍̏͑_̊ã̸̳̮͖͠s̶̛̭̎͐̑͟_̺͙̘͂̽̇̍ͨ̍͐͋, como 4 años no? ¿Como ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cu ȓ͞ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅu todo?"
+          ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Oct 20 00:18:56 2024
+Sun Oct 20 02:39:02 2024

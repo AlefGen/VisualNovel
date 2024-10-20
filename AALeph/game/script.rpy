@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define Pholis = Character("Pholis", Color = "blue")
+define Pholis = Character("Pholis", Color = "red")
 define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
 
 # Define images
@@ -29,7 +29,7 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel= 6)
 
-    Pholis = Character("Pholis", callback=callback_Pholis)
+    Pholis = Character("Pholis", callback=callback_Pholis, Color = "Red")
     Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
 
     
@@ -37,8 +37,7 @@ $ renpy.music.set_volume() # Ajust general vol of the game WIP
     
 #Firts cap Prologue
 label start:
-    jump recibir_llamada
-    # jump recibir_llamada # WTF
+    #jump recibir_llamada # WTF
 
     $ renpy.store.preferences.text_cps = 10
 
@@ -62,19 +61,35 @@ label start:
 
     scene black with fade
     show image "images/Bed1.png" 
-    play music "audio/Track1.ogg" # Emotional music
+    play music "audio/Track1.mp3" # Emotional music
 
     $ renpy.store.preferences.text_cps = 30
 
     # Initial dialog pholis scence
     Pholis "Otra vez el mismo sueño de siempre"
-    Pholis "Que es lo que me querrá decir?"
-    Pholis "Ha sido lo mismo por meses… o años?"
+    Pholis "¿Que es lo que me querrá decir?"
+    Pholis "Ha sido lo mismo por ¿meses… o años?"
     Pholis "Siempre los mismos lugares y las mismas personas que alguna vez conocí"
     Pholis  "Pero por mas que le de vueltas, no logro sacarle algún significado"
     Pholis  "Para este punto ya ni sé si mis recuerdos son reales o de este sueño eterno…"
-    Pholis   "..."
-    Pholis   "Como sea, no vale la pena seguir pensando en ello"
+    menu:
+        "seguir pensando":
+            show image "images/intro1.png" with dissolve
+            Pholis "Es como si algo me estuviera observando"
+            show image "images/intro2.png" with fade
+            Pholis "Sin embargo, no siento miedo..."
+            Pholis "Talves no necesariamente quiere hacerme daño"
+            Pholis "¿Pero entonces que sera?"
+            Pholis "..."
+            Pholis "Bueno, no puedo durar todo el dia en esto"
+        
+
+        "no vale la pena":
+
+            Pholis   "..."
+            Pholis   "Como sea, no vale la pena seguir pensando en ello"
+         
+   
 
     
     # Instructions for the player
@@ -98,11 +113,12 @@ label start:
     # call interaction
     label recibir_llamada:
         show image "images/PC.png" with fade
-        Pholis "Que estaba haciendo ayer?"
+        Pholis "¿Que estaba haciendo ayer?"
         stop music
         scene black with fade
 
         play movie "images/Reloj.webm" 
+
         # End initial dialog
         #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
 
@@ -112,28 +128,70 @@ label start:
         Pholis "..."
         show image "images/PC.png" with fade
         Pholis "Esto e-"
-        scene anim1 
+        scene anim1  # arreglar image not found xd
 
         play sound "audio/Ring.mp3" loop
         
 
         Pholis "What is that sound?"
-        
+       
         play music "audio/Track2.mp3"
-        Pholis "mi... celular?"
+        Pholis "mi... ¿celular?"
         Pholis "Hacia rato que no lo escuchaba sonar" 
    
         menu:
             "Contestar llamada":
+
+                # subir velocidad de texto para sombra
                 stop sound
                 Pholis "..."
-                Sombra "ahshejeldle" # Sound effect, error with ***
+                Sombra "⌦⌰ℇ☊o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⎎ ☊ê̶̶̳̗̹̈́͐͂ͣ͘s̯̼̦̘̥̙̗̣̠ͧͫ̉ͦͫ̎͛ͯ̌̇̋̿̽̽͌ͪ̏̈́̿ͪ̿̏̈́͘͘͢͢͝ͅℇ⎎, ⎎ℇ ℇ t̸̨̨̢̥͚͚̪̻̭̖̤̤͉̅̉͂ͯ̀̂͒͂͛̑̾̂̃͑̋̆ͮ̃͑ͯ̔ͮ͐̓̿͐̉ͮͩ͢͜͠⍧⌰ℇ o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⍑☈⍲P̴̸̡̗̲͊̿h̷̶̴̶̢̬̻̹̻̬͉̼̮̼͚͖̫̪̥̠̝͕̳͖ͨͬ͗ͣͩ̆̅͐̂ͤ͒ͬͩ̓̈́̿̆̋̎͢͠o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅį̸̨̧͖͙̹͇͔̤̖̻͈̳͔̹̘̹͎̙ͫ͗̈͗̋̽͋ͨ̔̍̌̾ͥ́̉̕̚͟͠͠ͅs͖̙̞̤ͭ̈́́́?" # Sound effect, error with ***
+                Pholis "¿Di-Disculpe?"
+
+                Sombra "Pho̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅį̸̨̧͖͙̹͇͔̤̖̻͈̳͔̹̘̹͎̙ͫ͗̈͗̋̽͋ͨ̔̍̌̾ͥ́̉̕̚͟͠͠ͅs_͌ E̴̵͍̦̝͕̖̭̩̬̙ͫ͋͌̊́̅̎̋̿̅̉̅ͮ̊̓͟͝͡ŗ̻̩̣͖͎̱̘̙̲̪ͮ̔ͣ̾̌̈̑ͧ̔̓͘͠ê̶̶̳̗̹̈́͐͂ͣ͘s̯̼̦̘̥̙̗̣̠ͧͫ̉ͦͫ̎͛ͯ̌̇̋̿̽̽͌ͪ̏̈́̿ͪ̿̏̈́͘͘͢͢͝ͅ t̸̨̨̢̥͚͚̪̻̭̖̤̤͉̅̉͂ͯ̀̂͒͂͛̑̾̂̃͑̋̆ͮ̃͑ͯ̔ͮ͐̓̿͐̉ͮͩ͢͜͠ṹ̸̢͓͖̜̻̠̼͔̋̐ͤͣ̓ͫ̀ͭ͗̚͜͡?̶̴͍̤͇͇̓͌͑̄͑ͤ͋͑͗̀̕͠͠?"
+
+
+                Pholis "¿Quien me esta hablando? ¿Sabe quien soy?"
+
+                        
+                menu:
+                    "Seguir":
+                        Pholis "¿Qu- Quien habla?"
+
+
+                        Sombra "No m̡̬̬̼̺̂̔́͞e͉͕͓̬̫̠͓̬͕͚̖̼̼̟̎ͣ̀̀̐̋́ͧ̃̓ͩ̃ͫͪ̋̿̏̽ͧͬ ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cuṵ̶̦̤̬̮̼̹̙͙͕̲̎ͮ̽̎̐̿ͨ̒̂ͨ̎̂̽̆͑̀ͤͬͦ̚͜͜͡ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅd̏̈́̅das_̺͙̘͂̽̇̍ͨ̍͐͋? ⎎⌾⍦Ma ⍦t"
+
+                        Pholis "¿?"
+
+                        Sombra "Q҉u҉e҉ t҉a҉l҉ ҉,҉ c҉o҉m҉o҉ h҉a҉s҉ e҉s҉t҉a҉d҉o҉"
+
+                        Sombra "¿Cuánto ha ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅḑ̢̣͔̤͍̠̯̏̈́̅̒̇͛̍̏͑_̊ã̸̳̮͖͠s̶̛̭̎͐̑͟_̺͙̘͂̽̇̍ͨ̍͐͋, como 4 años no? ¿Como ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cu ȓ͞ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅu todo?"
+
+                        Pholis "(¿Porque me cuesta tanto entenderlo?, siempre me pasa lo mismo...)"
+
+                        Pholis "(¿Estoy seguro de que esto siquiera es real? Será otro de esos sueños?"
+
+                        #imagen sombra
+
+                        Sombra "Es҉҉ás a҉҉í"
+
+
+
+                        # imagen recuerdo matt silueta brillan
+                        
+
+                        
+                        #imagen alucinacion 
+                    "Colgar":
+                        jump fin_escena
+
+                        
                 #TODO Sound effect strange dialog
-                jump fin_escena
+                
             
             "Ignorar":
                 
-                Pholis "... ... ..."
+                Pholis "... No debe ser importante ..."
                 stop sound
                 jump fin_escena
 
@@ -147,7 +205,7 @@ label start:
         scene black_screen with fade
         "6 6 6"
         show image "images/Habitacion.png"
-        play music "audio/Track1.ogg"
+        play music "audio/Track1.mp3"
 
 
         #TODO Change scene to pc search 
