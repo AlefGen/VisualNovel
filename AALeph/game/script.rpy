@@ -15,6 +15,7 @@ define black_screen = "images/black_screen.png"
 # Define functions 
 define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5))
 
+image anim1 = Movie(play = "images/anim1.webm")
 init python:
     def callback_Pholis(event, **kwargs):
         if event == "show":
@@ -33,9 +34,10 @@ init python:
 
     
 $ renpy.music.set_volume() # Ajust general vol of the game WIP
-    .
+    
 #Firts cap Prologue
 label start:
+    jump recibir_llamada
     # jump recibir_llamada # WTF
 
     $ renpy.store.preferences.text_cps = 10
@@ -74,7 +76,7 @@ label start:
     Pholis   "..."
     Pholis   "Como sea, no vale la pena seguir pensando en ello"
 
-    jump recibir_llamada
+    
     # Instructions for the player
     
     #"Pholis puede explorar su cuarto"
@@ -110,12 +112,13 @@ label start:
         Pholis "..."
         show image "images/PC.png" with fade
         Pholis "Esto e-"
+        scene anim1 
 
         play sound "audio/Ring.mp3" loop
         
 
         Pholis "What is that sound?"
-        show image "images/Bed1.png" with fade
+        
         play music "audio/Track2.mp3"
         Pholis "mi... celular?"
         Pholis "Hacia rato que no lo escuchaba sonar" 

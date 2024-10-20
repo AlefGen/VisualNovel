@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 21: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-                renpy.music.play("text.mp3, channel="sound")
+File "game/script.rpy", line 37: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    .
+    ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Thu Oct 17 01:00:17 2024
+Sun Oct 20 00:18:56 2024
