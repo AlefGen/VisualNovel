@@ -32,12 +32,8 @@ init python:
     Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
 
     
-
-    
-
-  
-
-
+$ renpy.music.set_volume() # Ajust general vol of the game WIP
+    .
 #Firts cap Prologue
 label start:
     # jump recibir_llamada # WTF
@@ -46,43 +42,28 @@ label start:
 
     # Scence worktrugh start -> cuarto -> call -> end scene
    
-    
     # Initial dialog
     Sombra "Tranquilo..."   
-    
-    
-    
-    
     Sombra "...No te preucupes..."
-    
-
-    
-    
     Sombra "Pronto acabará todo..."
-    scene black with fade
-   
 
+    scene black with fade
     play movie "images/intro.webm" # k seconds
     
     # End initial dialog
     #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
-
-
     #stop movie
     #scene black with fade
 
     Sombra "...Pronto seras libre..."
     Sombra "...Pronto............"   
-    scene black with fade
-    
 
-    
+    scene black with fade
     show image "images/Bed1.png" 
-    
     play music "audio/Track1.ogg" # Emotional music
+
     $ renpy.store.preferences.text_cps = 30
 
-     
     # Initial dialog pholis scence
     Pholis "Otra vez el mismo sueño de siempre"
     Pholis "Que es lo que me querrá decir?"
@@ -92,14 +73,8 @@ label start:
     Pholis  "Para este punto ya ni sé si mis recuerdos son reales o de este sueño eterno…"
     Pholis   "..."
     Pholis   "Como sea, no vale la pena seguir pensando en ello"
-    
-
-    
-
 
     jump recibir_llamada
-
-
     # Instructions for the player
     
     #"Pholis puede explorar su cuarto"
@@ -145,9 +120,6 @@ label start:
         Pholis "mi... celular?"
         Pholis "Hacia rato que no lo escuchaba sonar" 
    
-        #TODO Modify this line to ring phone play music audio/ring
-        
-
         menu:
             "Contestar llamada":
                 stop sound
@@ -171,7 +143,7 @@ label start:
         # Only history no player interaction 
         scene black_screen with fade
         "6 6 6"
-        scene cuarto with fade #TODO FIX CUARTO XD
+        show image "images/Habitacion.png"
         play music "audio/Track1.ogg"
 
 
@@ -242,11 +214,6 @@ label start:
                     #TODO Show suicide image 
                     $ renpy.load("prologue")
 
-
-            
-
-
-        
 
 
     return
