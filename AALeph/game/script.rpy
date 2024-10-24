@@ -50,7 +50,9 @@ $ renpy.music.set_volume() # Ajust general vol of the game WIP
 This is the main script of the game, here is where the game starts,
 its important that the init name is start or the game would fail.
 """
+
 label start:
+    stop music
     $ renpy.store.preferences.text_cps = 10
     
     Sombra "Calm down..."   
