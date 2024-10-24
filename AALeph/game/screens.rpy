@@ -248,7 +248,7 @@ screen quick_menu():
 
             xalign 0.5
             yalign 1.0
-
+            
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
@@ -290,16 +290,10 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        if main_menu:
-            xpos 800
-        else:
-            xpos 0
-        
-
-        # xpos gui.navigation_xpos
+        xpos 0
         yalign 0.5
-
         spacing gui.navigation_spacing
+
 
         if main_menu:
 
@@ -368,7 +362,25 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    #use navigation
+    vbox:
+        xpos 800
+        yalign 0.5
+        spacing gui.navigation_spacing
+        textbutton _("Start") action Start()
+        textbutton _("Load") action ShowMenu("load")
+        textbutton _("About") action ShowMenu("about")
+        textbutton _("Preferences") action ShowMenu("preferences")
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("Help") action ShowMenu("help")
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
 
     if gui.show_name:
 
@@ -392,7 +404,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    # background "gui/overlay/main_menu.png"
+    
 
 style main_menu_vbox:
     xalign 1.0
