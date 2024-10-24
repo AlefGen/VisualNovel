@@ -1,21 +1,28 @@
-﻿# The script of the game goes in this file.
+﻿# ========== Main game script ==========
+"""
+Version 0.0.5
+@Author: AALeph
+@Date: 2024
+@Description: This is the main script of the game, here is where the game starts,
+"""
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
 
+# ========== Character declaration ==========
 define Pholis = Character("Pholis", Color = "red")
 define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
 
-# Define images
-
+# ========== Image declaration ==========
 define cuarto = "images/Habitacion.png"
 define black_screen = "images/black_screen.png"
 
 
-# Define functions 
+# ========== Aux Functions ==========
 define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5))
-
 image anim1 = Movie(play = "images/anim1.webm")
+
+
+
+# ========== Python Aux Functions ==========
 init python:
     def callback_Pholis(event, **kwargs):
         if event == "show":
@@ -32,10 +39,16 @@ init python:
     Pholis = Character("Pholis", callback=callback_Pholis, Color = "Red")
     Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
 
-    
+
+
+# ========== Game pre-configuration ==========    
 $ renpy.music.set_volume() # Ajust general vol of the game WIP
     
-#Firts cap Prologue
+# ========== Game start ==========
+"""
+This is the main script of the game, here is where the game starts,
+its important that the init name is start or the game would fail.
+"""
 label start:
     #jump recibir_llamada # WTF
 
@@ -44,20 +57,20 @@ label start:
     # Scence worktrugh start -> cuarto -> call -> end scene
    
     # Initial dialog
-    Sombra "Tranquilo..."   
-    Sombra "...No te preucupes..."
-    Sombra "Pronto acabará todo..."
+    Sombra "Calm down..."   
+    Sombra "...Don't worry..."
+    Sombra "...It will all be over soon"
 
     scene black with fade
-    play movie "images/intro.webm" # k seconds
+    play movie "images/intro.webm" 
     
     # End initial dialog
     #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
     #stop movie
     #scene black with fade
 
-    Sombra "...Pronto seras libre..."
-    Sombra "...Pronto............"   
+    Sombra "...Soon you will be free…"
+    Sombra "Soon... ..."   
 
     scene black with fade
     show image "images/Bed1.png" 
@@ -66,49 +79,29 @@ label start:
     $ renpy.store.preferences.text_cps = 30
 
     # Initial dialog pholis scence
-    Pholis "Otra vez el mismo sueño de siempre"
-    Pholis "¿Que es lo que me querrá decir?"
-    Pholis "Ha sido lo mismo por ¿meses… o años?"
-    Pholis "Siempre los mismos lugares y las mismas personas que alguna vez conocí"
-    Pholis  "Pero por mas que le de vueltas, no logro sacarle algún significado"
-    Pholis  "Para este punto ya ni sé si mis recuerdos son reales o de este sueño eterno…"
+    Pholis "The same dream again, as always..."
+    Pholis "¿Qué es lo que me querrá decir?"
+    Pholis "Ha sido lo mismo por... ¿meses o años?"
+    Pholis "Siempre los mismos lugares y las mismas personas que alguna vez conocí."
+    Pholis "Pero por más que le dé vueltas, no logro sacarle algún significado."
+    Pholis "A este punto ya ni sé si mis recuerdos son reales o parte de este sueño eterno…"
     menu:
-        "seguir pensando":
+        "Seguir pensando":
             show image "images/intro1.png" with dissolve
-            Pholis "Es como si algo me estuviera observando"
+            Pholis "Es como si algo me estuviera observando."
             show image "images/intro2.png" with fade
             Pholis "Sin embargo, no siento miedo..."
-            Pholis "Talves no necesariamente quiere hacerme daño"
-            Pholis "¿Pero entonces que sera?"
+            Pholis "Tal vez no necesariamente quiere hacerme daño."
+            Pholis "¿Pero entonces qué será?"
             Pholis "..."
-            Pholis "Bueno, no puedo durar todo el dia en esto"
-        
+            Pholis "Bueno, no puedo durar todo el día en esto."
+            jump recibir_llamada
 
-        "no vale la pena":
+        "No vale la pena":
+            Pholis "..."
+            Pholis "Como sea, no vale la pena seguir pensando en ello."
+            jump recibir_llamada
 
-            Pholis   "..."
-            Pholis   "Como sea, no vale la pena seguir pensando en ello"
-         
-   
-
-    
-    # Instructions for the player
-    
-    #"Pholis puede explorar su cuarto"
-    #play music "audio/Track1.ogg"
-
-    # First option menu
-    #menu:
-        #"Mirar alrededor del cuarto":
-            #show image "images/Cuarto1.png" with dissolve # Change cuarto
-            #Pholis "todo.. aqui.. se siente raro"
-            #jump recibir_llamada
-        
-        #"Ir al baño":
-            #show image "images/Bano.png" with dissolve
-            #Pholis "..."
-            #jump recibir_llamada
-    
             
     # call interaction
     label recibir_llamada:
