@@ -21,8 +21,13 @@ define black_screen = "aux_images/black_screen.png"
 define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5)) 
 image anim1 = Movie(play = "animations/prologo/prologo_animacion_1.webm")
 
+# ========== Efecto asi bien blureado==========
+define hpunch = hpunch
 
-
+transform blurred:
+    linear 0.75 blur 10
+transform unblur:
+    linear 1 blur 0
 # ========== Python Aux Functions ==========
 init python:
     def callback_Pholis(event, **kwargs):
@@ -52,6 +57,8 @@ its important that the init name is start or the game would fail.
 """
 
 label start:
+    jump recibir_llamada
+    
     stop music
     $ renpy.store.preferences.text_cps = 10
     
@@ -119,15 +126,16 @@ label start:
         Pholis "..."
         show image "images/prologo/prologo_techo_pholis.png" with fade
         Pholis "Esto e-"
-        scene anim1  # arreglar image not found xd #FIXME
+        scene anim1 at blurred  # arreglar image not found xd #FIXME
 
         play sound "audio/Ring.mp3" loop
         
 
         Pholis "What is that sound?"
        
-        play music "audio/Track2.mp3"
+        play music "audio/Track2v2.wav"
         Pholis "mi... ¿celular?"
+        scene anim1 at unblur with dissolve
         Pholis "Hacia rato que no lo escuchaba sonar" 
    
         menu:
@@ -136,8 +144,10 @@ label start:
                 # subir velocidad de texto para sombra
                 stop sound
                 Pholis "..."
+                with hpunch
                 Sombra "⌦⌰ℇ☊o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⎎ ☊ê̶̶̳̗̹̈́͐͂ͣ͘s̯̼̦̘̥̙̗̣̠ͧͫ̉ͦͫ̎͛ͯ̌̇̋̿̽̽͌ͪ̏̈́̿ͪ̿̏̈́͘͘͢͢͝ͅℇ⎎, ⎎ℇ ℇ t̸̨̨̢̥͚͚̪̻̭̖̤̤͉̅̉͂ͯ̀̂͒͂͛̑̾̂̃͑̋̆ͮ̃͑ͯ̔ͮ͐̓̿͐̉ͮͩ͢͜͠⍧⌰ℇ o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⍑☈⍲P̴̸̡̗̲͊̿h̷̶̴̶̢̬̻̹̻̬͉̼̮̼͚͖̫̪̥̠̝͕̳͖ͨͬ͗ͣͩ̆̅͐̂ͤ͒ͬͩ̓̈́̿̆̋̎͢͠o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅį̸̨̧͖͙̹͇͔̤̖̻͈̳͔̹̘̹͎̙ͫ͗̈͗̋̽͋ͨ̔̍̌̾ͥ́̉̕̚͟͠͠ͅs͖̙̞̤ͭ̈́́́?" # Sound effect, error with ***
                 Pholis "¿Di-Disculpe?"
+                with hpunch
 
                 Sombra "Pho̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅį̸̨̧͖͙̹͇͔̤̖̻͈̳͔̹̘̹͎̙ͫ͗̈͗̋̽͋ͨ̔̍̌̾ͥ́̉̕̚͟͠͠ͅs_͌ E̴̵͍̦̝͕̖̭̩̬̙ͫ͋͌̊́̅̎̋̿̅̉̅ͮ̊̓͟͝͡ŗ̻̩̣͖͎̱̘̙̲̪ͮ̔ͣ̾̌̈̑ͧ̔̓͘͠ê̶̶̳̗̹̈́͐͂ͣ͘s̯̼̦̘̥̙̗̣̠ͧͫ̉ͦͫ̎͛ͯ̌̇̋̿̽̽͌ͪ̏̈́̿ͪ̿̏̈́͘͘͢͢͝ͅ t̸̨̨̢̥͚͚̪̻̭̖̤̤͉̅̉͂ͯ̀̂͒͂͛̑̾̂̃͑̋̆ͮ̃͑ͯ̔ͮ͐̓̿͐̉ͮͩ͢͜͠ṹ̸̢͓͖̜̻̠̼͔̋̐ͤͣ̓ͫ̀ͭ͗̚͜͡?̶̴͍̤͇͇̓͌͑̄͑ͤ͋͑͗̀̕͠͠?"
 
