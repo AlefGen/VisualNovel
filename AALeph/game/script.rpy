@@ -13,13 +13,13 @@ define Pholis = Character("Pholis", Color = "red")
 define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
 
 # ========== Image declaration ==========
-define cuarto = "images/Habitacion.png"
-define black_screen = "images/black_screen.png"
+define cuarto = "images/prologo/prologo_cuarto_pholis.png"
+define black_screen = "aux_images/black_screen.png"
 
 
 # ========== Aux Functions ==========
 define centered_text = Character(what_size=40, what_color="#FFFFFF", what_align=(0.5,0.5)) 
-image anim1 = Movie(play = "images/anim1.webm")
+image anim1 = Movie(play = "animations/prologo/prologo_animacion_1.webm")
 
 
 
@@ -51,17 +51,14 @@ This is the main script of the game, here is where the game starts,
 its important that the init name is start or the game would fail.
 """
 label start:
-  
-
     $ renpy.store.preferences.text_cps = 10
-  
     
     Sombra "Calm down..."   
     Sombra "...Don't worry..."
     Sombra "...It will all be over soon"
 
     scene black with fade
-    play movie "images/intro.webm" 
+    play movie "videos/prologo/prologo_primera_escena_intro.webm" 
     
     # End initial dialog
     #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
@@ -72,7 +69,7 @@ label start:
     Sombra "Soon... ..."   
 
     scene black with fade
-    show image "images/Bed1.png" 
+    show image "images/prologo/prologo_cuarto_pholis.png" 
     play music "audio/Track1.mp3" 
 
     $ renpy.store.preferences.text_cps = 30
@@ -86,9 +83,9 @@ label start:
     Pholis "A este punto ya ni sé si mis recuerdos son reales o parte de este sueño eterno…"
     menu:
         "Seguir pensando":
-            show image "images/intro1.png" with dissolve
+            show image "images/prologo/prologo_ojo.png" with dissolve
             Pholis "Es como si algo me estuviera observando."
-            show image "images/intro2.png" with fade
+            show image "images/prologo/prologo_manos.png" with fade
             Pholis "Sin embargo, no siento miedo..."
             Pholis "Tal vez no necesariamente quiere hacerme daño."
             Pholis "¿Pero entonces qué será?"
@@ -104,12 +101,12 @@ label start:
             
     # call interaction
     label recibir_llamada:
-        show image "images/PC.png" with fade
+        show image "images/prologo/prologo_techo_pholis.png" with fade
         Pholis "¿Que estaba haciendo ayer?"
         stop music
         scene black with fade
 
-        play movie "images/Reloj.webm" 
+        play movie "videos/prologo/prologo_reloj_moviendo.webm" 
 
         # End initial dialog
         #$ renpy.pause(12.5, hard=True)   #para evitar que se siga jugando con el video puesto, lo quito para mas facil probar xd
@@ -118,7 +115,7 @@ label start:
         #stop movie
         #scene black with fade
         Pholis "..."
-        show image "images/PC.png" with fade
+        show image "images/prologo/prologo_techo_pholis.png" with fade
         Pholis "Esto e-"
         scene anim1  # arreglar image not found xd #FIXME
 
@@ -194,9 +191,9 @@ label start:
 
     label escena_2:
         # Only history no player interaction 
-        scene black_screen with fade
+        scene black_screen with fade # FIXME
         "6 6 6"
-        show image "images/Habitacion.png"
+        show image "images/prologo/prologo_cama_pholis.png"
         play music "audio/Track1.mp3"
 
 
