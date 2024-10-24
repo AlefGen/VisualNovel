@@ -28,7 +28,7 @@ define config.check_conflicting_properties = True
 define gui.accent_color = '#0066cc'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#FFFFFF'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -63,7 +63,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Nosifer-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -72,7 +72,7 @@ define gui.text_size = 33
 define gui.name_text_size = 45
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 31
 
 ## The size of labels in the game's user interface.
 define gui.label_text_size = 36
@@ -158,7 +158,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 define gui.button_tile = False
 
 ## The font used by the button.
-define gui.button_text_font = gui.interface_text_font
+define gui.button_text_font = "fonts/PoiretOne-Regular.ttf"
 
 ## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
@@ -171,7 +171,7 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 
 ## The horizontal alignment of the button text. (0.0 is left, 0.5 is center, 1.0
 ## is right).
-define gui.button_text_xalign = 0.0
+define gui.button_text_xalign = 0.5
 
 
 ## These variables override settings for different kinds of buttons. Please see
@@ -248,7 +248,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 800
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 15
@@ -257,10 +257,10 @@ define gui.skip_ypos = 15
 define gui.notify_ypos = 68
 
 ## The spacing between menu choices.
-define gui.choice_spacing = 33
+define gui.choice_spacing = 20
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 20
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15

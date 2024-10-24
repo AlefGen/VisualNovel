@@ -290,7 +290,13 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        if main_menu:
+            xpos 800
+        else:
+            xpos 0
+        
+
+        # xpos gui.navigation_xpos
         yalign 0.5
 
         spacing gui.navigation_spacing
@@ -340,6 +346,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    font "fonts/Nosifer-Regular.ttf" #FIXME: Change font
 
 
 ## Main Menu screen ############################################################
@@ -385,7 +392,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -1549,7 +1556,7 @@ style nvl_window:
 
 style main_menu_frame:
     variant "small"
-    background "gui/phone/overlay/main_menu.png"
+    # background "gui/phone/overlay/main_menu.png"
 
 style game_menu_outer_frame:
     variant "small"
