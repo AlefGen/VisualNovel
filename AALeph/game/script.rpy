@@ -57,14 +57,14 @@ its important that the init name is start or the game would fail.
 """
 
 label start:
-    jump recibir_llamada
+    #jump recibir_llamada
     
     stop music
     $ renpy.store.preferences.text_cps = 10
     
-    Sombra "Calm down..."   
-    Sombra "...Don't worry..."
-    Sombra "...It will all be over soon"
+    Sombra "Tranquilo..."   
+    Sombra "...No te preocupes..."
+    Sombra "...Todo acabara pronto..."
 
     scene black with fade
     play movie "videos/prologo/prologo_primera_escena_intro.webm" 
@@ -74,8 +74,8 @@ label start:
     #stop movie
     #scene black with fade
 
-    Sombra "...Soon you will be free…"
-    Sombra "Soon... ..."   
+    Sombra "...Pronto seras libre..."
+    Sombra "Pronto......"   
 
     scene black with fade
     show image "images/prologo/prologo_cuarto_pholis.png" 
@@ -84,7 +84,7 @@ label start:
     $ renpy.store.preferences.text_cps = 30
 
     
-    Pholis "The same dream again, as always..."
+    Pholis "El mismo sueños otra vez, como siempre..."
     Pholis "¿Qué es lo que me querrá decir?"
     Pholis "Ha sido lo mismo por... ¿meses o años?"
     Pholis "Siempre los mismos lugares y las mismas personas que alguna vez conocí."
@@ -131,7 +131,7 @@ label start:
         play sound "audio/Ring.mp3" loop
         
 
-        Pholis "What is that sound?"
+        Pholis "Que ha sido ese sonido?"
        
         play music "audio/Track2v2.wav"
         Pholis "mi... ¿celular?"
