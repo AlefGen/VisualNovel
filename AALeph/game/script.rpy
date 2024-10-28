@@ -11,6 +11,7 @@ Version 0.0.5
 # ========== Character declaration ==========
 define Pholis = Character("Pholis", Color = "red")
 define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
+define notificacion_pc = Character("Notificacion", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf")
 
 # ========== Image declaration ==========
 define cuarto = "images/prologo/prologo_cuarto_pholis.png"
@@ -198,30 +199,34 @@ label start:
 
         label fin_escena:
             Pholis "Volvere a mi cama rapido"
-            "Debug purpose end scene 2"
             jump escena_2
 
     label escena_2:
         # Only history no player interaction 
-        scene black_screen with fade # FIXME
-        "6 6 6"
+        show image "aux_images/black_screen.png" with dissolve
+        with hpunch
+        "Pholis, despierta"
+        Pholis "¿E-eh que fue eso?"}
+        with hpunch
+        "Pholis, te dije que despiertes"
+        Pholis "¿Quien eres?"
+        with hpunch
+        "Tu me conoces bien..."
+        Pholis "..."
         show image "images/prologo/prologo_cama_pholis.png"
         play music "audio/Track1.mp3"
-
-
-        #TODO Change scene to pc search 
+        Pholis "Vaya que sueño tan extraño, bueno supongo que ire a la pc a buscar algo"
         "Pholis se encuentra buscando algo por internet"
         Pholis "Aggggg.. ahora no lo encuentro"
-        #TODO Sound effect of a subtle voice
-        #TODO Scene of dialog of shawdow in his left/right
-
-        Pholis "Ehh??"
-        Sombra "Pholis const3ta, ayu..."
-        #TODO Animation of pholis shutdown his pc in a slam
-        "Pholis atemorizado decidio volver a su cama"
-        #TODO Scene of fade of the screen and broken clock with some subtle noise of distorsion
+        # Sonido de notificacion #TODO al igual que para cada una de las notificaciones
+        notificacion_pc "Tienes un mensaje"
+        Pholis "¿Un mensaje?"
+        notificacion_pc "Dionyss: Hola Pholis, ¿como has estado?"
+        Pholis "¿Dionyss?, quien es ese?"
+        notificacion_pc "Dionyss: Mira que voy a pasar unos diás por tu ciudad, ¿quieres que nos veamos?"
+        Pholis "¿De que habla?, no lo recuerdo"
         stop music
-        "Debug purpose end scene 2"
+        "TODO NOT FINISHED"
         $ renpy.save("prologue") # Save game for avoiding lose information
 
 
