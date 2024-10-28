@@ -67,7 +67,7 @@ its important that the init name is start or the game would fail.
 
 label start:
     #jump recibir_llamada
-        
+    #jump capitulo_1     
     stop music
     $ renpy.store.preferences.text_cps = 10
     
@@ -212,10 +212,15 @@ label start:
 
         label fin_escena:
             Pholis "Volvere a mi cama rapido"
-            jump escena_2
+            stop music
+            jump capitulo_1
 
-    label escena_2:
+    label capitulo_1:
+        stop music
+        scene black with dissolve  
+        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 1: El descenso{/b}{/font}" # nose si deberiamos poner capitulos porque yo creo que va a ser muy corto
         # Only history no player interaction 
+        play movie "videos/Capitulo1/sueno1.webm"
         show image "aux_images/black_screen.png" with dissolve
         with hpunch
         "Pholis, despierta"
@@ -226,14 +231,17 @@ label start:
         with hpunch
         "Tu me conoces bien..."
         Pholis "..."
-        show image "images/prologo/prologo_cama_pholis.png"
+        show image "images/prologo/prologo_cuarto_pholis.png"
         play music "audio/Track1.mp3"
-        Pholis "Vaya que sueño tan extraño, bueno supongo que ire a la pc a buscar algo"
-        "Pholis se encuentra buscando algo por internet"
-        Pholis "Aggggg.. ahora no lo encuentro"
+        Pholis "Otra vez lo mismo..."
+        Pholis "Aunque esta vez, habia algo mas estoy seguro"
+        show image "images/Capitulo1/afuera.png" with dissolve
+        Pholis "No recuerdo bien pero, era... ¿afuera?"
+        
         # Sonido de notificacion #TODO al igual que para cada una de las notificaciones
-        notificacion_pc "Tienes un mensaje"
-        Pholis "¿Un mensaje?"
+        notificacion_pc "Tienes un mensaje" with hpunch
+        Pholis "¿eh?... ¿Un mensaje?"
+        show image "images/prologo/prologo_techo_pholis.png" with dissolve
         notificacion_pc "Dionyss: Hola Pholis, ¿como has estado?"
         Pholis "¿Dionyss?, quien es ese?"
         notificacion_pc "Dionyss: Mira que voy a pasar unos diás por tu ciudad, ¿quieres que nos veamos?"
@@ -245,11 +253,11 @@ label start:
 
    
 
-    label capitulo_1:
+    label capitulo_2:
 
         # Introduction to chapter 1
         scene black with dissolve  
-        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 1: El descenso{/b}{/font}"
+        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 2: El potatzio {/b}{/font}"
 
         label escena_1_cap1:
             "Pholis abre los ojos atemorizado por lo de la vez anterior"

@@ -1,36 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 69, in script
-    Pholis "Otra vez el mismo sueño de siempre"
-  File "game/script.rpy", line 21, in callback
-    renpy.music.play("text.mp3", channel1=7)
-TypeError: play() got an unexpected keyword argument 'channel1'
+  File "game/script.rpy", line 251, in script
+    jump escnea_2_cap1
+ScriptError: could not find label 'escnea_2_cap1'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 69, in script
-    Pholis "Otra vez el mismo sueño de siempre"
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 2573, in execute
-    Say.execute(self)
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\character.py", line 1455, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\character.py", line 1106, in do_display
-    display_say(who,
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\character.py", line 695, in display_say
-    pause_callback("show")
-  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\character.py", line 91, in __call__
-    c(*args, **kwargs)
-  File "game/script.rpy", line 21, in callback
-    renpy.music.play("text.mp3", channel1=7)
-TypeError: play() got an unexpected keyword argument 'channel1'
+  File "game/script.rpy", line 251, in script
+    jump escnea_2_cap1
+  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Camilo\Downloads\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'escnea_2_cap1'.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.2.24090902
-AALeph 1.0
-Thu Oct 17 01:04:37 2024
+AALeph 0.06
+Thu Oct 24 13:55:12 2024
