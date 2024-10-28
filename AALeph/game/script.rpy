@@ -47,6 +47,14 @@ init python:
     Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
 
 
+init python:
+    # ========== Variables ==========
+
+    locura = 0
+    muertes = 0
+    conexion_con_sombra = 0
+
+
 
 # ========== Game pre-configuration ==========    
 $ renpy.music.set_volume() # Ajust general vol of the game WIP
@@ -59,7 +67,7 @@ its important that the init name is start or the game would fail.
 
 label start:
     #jump recibir_llamada
-    
+        
     stop music
     $ renpy.store.preferences.text_cps = 10
     
@@ -93,6 +101,7 @@ label start:
     Pholis "A este punto ya ni sé si mis recuerdos son reales o parte de este sueño eterno…"
     menu:
         "Seguir pensando":
+            $ locura += 1
             show image "images/prologo/prologo_ojo.png" with dissolve
             Pholis "Es como si algo me estuviera observando."
             show image "images/prologo/prologo_manos.png" with fade
@@ -141,6 +150,7 @@ label start:
    
         menu:
             "Contestar llamada":
+                $ conexion_con_sombra += 1
 
                 # subir velocidad de texto para sombra
                 stop sound
@@ -158,6 +168,9 @@ label start:
                         
                 menu:
                     "Seguir":
+
+                        $ conexion_con_sombra += 1
+
                         Pholis "¿Qu- Quien habla?"
 
 
@@ -206,7 +219,7 @@ label start:
         show image "aux_images/black_screen.png" with dissolve
         with hpunch
         "Pholis, despierta"
-        Pholis "¿E-eh que fue eso?"}
+        Pholis "¿E-eh que fue eso?"
         with hpunch
         "Pholis, te dije que despiertes"
         Pholis "¿Quien eres?"
@@ -268,7 +281,23 @@ label start:
                         jump habitacion_fuera
 
                     "Quedarse":
-                        jump suicide_ending
+                    
+                        if locura > 0:
+                            jump suicide_ending
+                        else:
+                            jump mala_idea
+                            
+                label mala_idea:
+                    #TODO Mostrar cuarto totalmente desfigurado
+                    Sombra "Pholis..."
+                    $ locura += 3
+                    with hpunch
+                    "Te lo advertimos"
+                    Pholis "Q-que esta pasando, ayuda!"
+                    Sombra "Sabiamos"
+                    "Pholis atemorizado corre hacia afuera"
+                    jump habitacion_fuera
+
 
                 label suicide_ending:
                     Pholis "{i}Necesito-o{/i}"
