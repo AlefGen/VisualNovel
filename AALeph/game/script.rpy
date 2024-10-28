@@ -12,6 +12,7 @@ Version 0.0.5
 define Pholis = Character("Pholis", Color = "red")
 define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf")
 define notificacion_pc = Character("Notificacion", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf")
+define notificacion_celular = Character("Celular", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf")
 
 # ========== Image declaration ==========
 define cuarto = "images/prologo/prologo_cuarto_pholis.png"
@@ -261,21 +262,16 @@ label start:
 
         label escena_1_cap1:
             "Pholis abre los ojos atemorizado por lo de la vez anterior"
-            show image "images/Habitacion.png"
-            Pholis "¿Acaso debo salir para ver si esto me pasa??"
+            show image "images/prologo/prologo_cuarto_2_pholis.png"
+            Pholis "El de ayer quien habra sido Dionyss, no me suena de nada"
+            Pholis "Estoy pensado si salir un rato afuera, hoy me siento con la mente extraña"
+            
             menu:
                 "Salir de la habitacion":
                     jump habitacion_fuera
 
                 "Quedarse adentro":
                     jump se_queda_adentro
-
-            label habitacion_fuera:
-                show image "<ciudad>" with fade 
-                Pholis "{i}No recuerdo que el ayer fuese tan distinto al hoy{/i}"
-                #Background music of horror and lonelines
-                jump escnea_2_cap1
-
 
 
             label se_queda_adentro:
@@ -294,7 +290,7 @@ label start:
                             jump suicide_ending
                         else:
                             jump mala_idea
-                            
+
                 label mala_idea:
                     #TODO Mostrar cuarto totalmente desfigurado
                     Sombra "Pholis..."
@@ -317,6 +313,49 @@ label start:
                     pause(3)
                     #TODO Show suicide image 
                     $ renpy.load("prologue")
+
+            label habitacion_fuera:
+                show image "images/Capitulo1/capitulo1_ciudad_1.png" with fade 
+                Pholis "{i}No recuerdo que el ayer fuese tan distinto al hoy{/i}"
+                Pholis "Veo como personas, pero fragmentadas en colores"
+                notificacion_celular "Dionyss: Pholis, Hola, como te comentaba ayer"
+                notificacion_celular "Dionyss: Podemos vernos en la cafeteria de la esquina de tu casa"
+                notificacion_celular "Dionyss: Estare ahi sobre las 4 de la tarde, te espero."
+                Pholis "E-h-h otra vez él ¿sera que le hago caso?"
+                "Pholis, quedate con nostros"
+                "Tu sabes quienes son tus verdaderos amigos"
+
+                play music "audio/menu-music.mp3"
+                #Background music of horror and lonelines
+                jump escena_2_cap1
+
+        label escena_2_cap1:
+            menu: 
+                "Encontrarse en el cafe con Dionyss":
+                    #TODO Mostrar imagenes de la calle
+                    Pholis "Este mundo esta tan cambiando qué habra pasado"
+                    #IMAGE
+                    Pholis "Las calles estan distorsionadas"
+                    # IDEA NO FINAL
+                    Sombra "Pholis, me escuchas" #Distorsionar letras pero que se entienda pls
+                    Pholis "E-h-h quien eres?"
+                    #IMAGE
+                    Sombra "Eso no importa, he venido a salvarte"
+                    Pholis "dee quien??"
+                    #IMAGE 
+                    Sombra "De tí, no los escuches, no les hagas caso, hazle caso a tu corazon."
+                "No ir":
+                    Pholis "Mejor no voy, quiero estar en mi zona"
+                    with hpunch
+                    "Muy bien Pholis"
+                    $ locura += 3
+                    
+
+
+
+
+
+
 
 
 
