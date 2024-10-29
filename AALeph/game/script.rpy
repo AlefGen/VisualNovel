@@ -14,6 +14,7 @@ define Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_
 define notificacion_pc = Character("Notificacion", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf")
 define notificacion_celular = Character("Celular", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf")
 
+
 # ========== Image declaration ==========
 define cuarto = "images/prologo/prologo_cuarto_pholis.png"
 define black_screen = "aux_images/black_screen.png"
@@ -44,8 +45,18 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel= 6)
 
+    def callback_notificacion_pc(event, **kwargs):
+        if event == "show":
+            renpy.music.play("Ring.mp3", channel=6)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel= 6)
+        
+
     Pholis = Character("Pholis", callback=callback_Pholis, Color = "Red")
     Sombra = Character("???", Color = "grey", what_font = "fonts/horror_font_2.ttf",callback=callback_Sombra)
+    notificacion_pc = Character("Notificacion", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf", callback=callback_notificacion_pc)
+    notificacion_celular = Character("Celular", Color = "black", what_font = "fonts/PoiretOne-Regular.ttf", callback=callback_notificacion_pc)
+
 
 
 init python:
@@ -301,6 +312,7 @@ label start:
                     Sombra "Sabiamos"
                     "Pholis atemorizado corre hacia afuera"
                     jump habitacion_fuera
+                    
 
 
                 label suicide_ending:
@@ -344,6 +356,9 @@ label start:
                     Pholis "dee quien??"
                     #IMAGE 
                     Sombra "De tí, no los escuches, no les hagas caso, hazle caso a tu corazon."
+                    Pholis "Ok (Confundido)?"
+                    #IMAGE
+                    Pholis "Bueno no importa, en que estaba. ¡Ah sí! Dionyss"
                 "No ir":
                     Pholis "Mejor no voy, quiero estar en mi zona"
                     with hpunch
