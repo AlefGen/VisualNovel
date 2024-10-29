@@ -168,6 +168,9 @@ label start:
                 stop sound
                 Pholis "..."
                 with hpunch
+                # $ renpy.store.preferences.text_cps = 50
+
+
                 Sombra "⌦⌰ℇ☊o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⎎ ☊ê̶̶̳̗̹̈́͐͂ͣ͘s̯̼̦̘̥̙̗̣̠ͧͫ̉ͦͫ̎͛ͯ̌̇̋̿̽̽͌ͪ̏̈́̿ͪ̿̏̈́͘͘͢͢͝ͅℇ⎎, ⎎ℇ ℇ t̸̨̨̢̥͚͚̪̻̭̖̤̤͉̅̉͂ͯ̀̂͒͂͛̑̾̂̃͑̋̆ͮ̃͑ͯ̔ͮ͐̓̿͐̉ͮͩ͢͜͠⍧⌰ℇ o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅ⍑☈⍲P̴̸̡̗̲͊̿h̷̶̴̶̢̬̻̹̻̬͉̼̮̼͚͖̫̪̥̠̝͕̳͖ͨͬ͗ͣͩ̆̅͐̂ͤ͒ͬͩ̓̈́̿̆̋̎͢͠o̴̡̧̧͍̞̘͖̬̮̟̣͖̠̟̠̮̮̫ͫͨͮ̓͑ͭ́ͧ̀ͭ̐͆̉ͧ̈͛̂ͮ̆̀̈̍ͤ͟͜͜͜͝l͓̗̕ͅį̸̨̧͖͙̹͇͔̤̖̻͈̳͔̹̘̹͎̙ͫ͗̈͗̋̽͋ͨ̔̍̌̾ͥ́̉̕̚͟͠͠ͅs͖̙̞̤ͭ̈́́́?" # Sound effect, error with ***
                 Pholis "¿Di-Disculpe?"
                 with hpunch
@@ -223,6 +226,7 @@ label start:
                 jump fin_escena
 
         label fin_escena:
+            # va al baño, se ve solo la silueta de pholis en el espejo - piensa acerca de "Cuando dejara de perseguirme" - no le da importancia
             Pholis "Volvere a mi cama rapido"
             stop music
             jump capitulo_1
@@ -251,6 +255,8 @@ label start:
         Pholis "No recuerdo bien pero, era... ¿afuera?"
         
         # Sonido de notificacion #TODO al igual que para cada una de las notificaciones
+
+        # #FIXME Dionyss llega a la casa, en lugar de invitar afuera (Pholis aun no esta preparado para salir por su cuenta)
         notificacion_pc "Tienes un mensaje" with hpunch
         Pholis "¿eh?... ¿Un mensaje?"
         show image "images/prologo/prologo_techo_pholis.png" with dissolve
@@ -269,12 +275,15 @@ label start:
 
         # Introduction to chapter 1
         scene black with dissolve  
-        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 2: El potatzio {/b}{/font}"
+        centered_text "{size=+20}{font=fonts/horror_font_2.ttf}{b}CAPITULO 2: El Visitante {/b}{/font}"
+        #TODO Dionyss llega a la casa 
 
         label escena_1_cap1:
             "Pholis abre los ojos atemorizado por lo de la vez anterior"
             show image "images/prologo/prologo_cuarto_2_pholis.png"
             Pholis "El de ayer quien habra sido Dionyss, no me suena de nada"
+
+            #FIXME Pholis aun no esta preparado para salir solo 
             Pholis "Estoy pensado si salir un rato afuera, hoy me siento con la mente extraña"
             
             menu:
@@ -352,10 +361,10 @@ label start:
                     Sombra "Pholis, me escuchas" #Distorsionar letras pero que se entienda pls
                     Pholis "E-h-h quien eres?"
                     #IMAGE
-                    Sombra "Eso no importa, he venido a salvarte"
-                    Pholis "dee quien??"
+                    Sombra "Eso no importa, he venido a salvarte" #FIXME no tan explicito 
+                    Pholis "de quien??"
                     #IMAGE 
-                    Sombra "De tí, no los escuches, no les hagas caso, hazle caso a tu corazon."
+                    Sombra "De tí, no los escuches, no les hagas caso, hazle caso a tu corazon." #FIXME no tan explicito
                     Pholis "Ok (Confundido)?"
                     #IMAGE
                     Pholis "Bueno no importa, en que estaba. ¡Ah sí! Dionyss"
