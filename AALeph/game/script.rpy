@@ -193,9 +193,9 @@ label start:
 
                         Pholis "¿?"
 
-                        Sombra "Q҉u҉e҉ t҉a҉l҉ ҉,҉ c҉o҉m҉o҉ h҉a҉s҉ e҉s҉t҉a҉d҉o҉"
+                        Sombra "Q҉u҉e҉ t҉a҉l҉ ҉,҉ c҉o҉ e҉s҉t҉ao҉"
 
-                        Sombra "¿Cuánto ha ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅḑ̢̣͔̤͍̠̯̏̈́̅̒̇͛̍̏͑_̊ã̸̳̮͖͠s̶̛̭̎͐̑͟_̺͙̘͂̽̇̍ͨ̍͐͋, como 4 años no? ¿Como ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cu ȓ͞ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅu todo?"
+                        Sombra "¿Cuánto ha ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅḑ̢̣͔̤͍̠̯̏̈́̅̒̇͛̍̏͑_̊ã̸̳̮͖͠s̶̛̭̎͐̑͟_̺͙̘͂̽̇̍ͨ̍͐͋,  4 ¿Como ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cu ȓ͞ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅu todo?"
 
                         Pholis "(¿Porque me cuesta tanto entenderlo?, siempre me pasa lo mismo...)"
 
@@ -203,11 +203,13 @@ label start:
 
                         #imagen sombra
 
-                        Sombra "Es҉҉ás a҉҉í"
+                        Sombra "Es҉҉í"
+
+                        #sonido de colgar click bup
 
 
 
-                        # imagen recuerdo matt silueta brillan
+                       
                         
 
                         
@@ -223,11 +225,18 @@ label start:
                 
                 Pholis "... No debe ser importante ..."
                 stop sound
-                jump fin_escena
+                jump capitulo_1
 
         label fin_escena:
-            # va al baño, se ve solo la silueta de pholis en el espejo - piensa acerca de "Cuando dejara de perseguirme" - no le da importancia
-            Pholis "Volvere a mi cama rapido"
+            #se detiene el sonido de latido + sonido de respirar como calmado??
+            Pholis "¿Por qué?"
+            Pholis "¿Cuando acabara todo esto?"
+            Pholis "Volvere a lo mio, debo tranquilizarme."
+
+
+           
+            
+            
             stop music
             jump capitulo_1
 
@@ -253,10 +262,19 @@ label start:
         Pholis "Aunque esta vez, habia algo mas estoy seguro"
         show image "images/Capitulo1/afuera.png" with dissolve
         Pholis "No recuerdo bien pero, era... ¿afuera?"
+        # va al baño, se ve solo la silueta de pholis en el espejo - piensa acerca de "Cuando dejara de perseguirme" - no le da importancia
+
+
+
+        #pholis se pone a pensar sobre eso ultimo "Cuanto tiempo ya llevo aqui?" y mas nose
+        Pholis "¿Cuanto tiempo ya llevo aqui?"
+
+
         
         # Sonido de notificacion #TODO al igual que para cada una de las notificaciones
 
         # #FIXME Dionyss llega a la casa, en lugar de invitar afuera (Pholis aun no esta preparado para salir por su cuenta)
+    
         notificacion_pc "Tienes un mensaje" with hpunch
         Pholis "¿eh?... ¿Un mensaje?"
         show image "images/prologo/prologo_techo_pholis.png" with dissolve
