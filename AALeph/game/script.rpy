@@ -268,6 +268,7 @@ label start:
 
         #pholis se pone a pensar sobre eso ultimo "Cuanto tiempo ya llevo aqui?" y mas nose
         Pholis "¿Cuanto tiempo ya llevo aqui?"
+        Pholis "Misma rutina, mismos sentimientos..."
 
 
         
