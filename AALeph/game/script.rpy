@@ -343,6 +343,12 @@ label start:
             #mas instensificado el knock knock 
             Pholis "No parece que se vaya a detener pronto"
             Pholis "¿Que deberia hacer?"
+            menu:
+                "Abrir":
+                    jump habitacion_fuera
+
+                "Ignorar":
+                    jump se_queda_adentro
 
             #Dionyss llega a la casa 
             #opcion de abrir o ignorar
