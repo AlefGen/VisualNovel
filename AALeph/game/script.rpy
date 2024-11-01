@@ -269,15 +269,20 @@ label start:
         #pholis se pone a pensar sobre eso ultimo "Cuanto tiempo ya llevo aqui?" y mas nose
         Pholis "¿Cuanto tiempo ya llevo aqui?"
         Pholis "Misma rutina, mismos sentimientos..."
+        Pholis "Cada dia el mismo que el anterior."
+        Pholis "¿Por cuanto tiempo mas?"
+        Pholis "Aunque, debo de..."
 
 
         
-        # Sonido de notificacion #TODO al igual que para cada una de las notificaciones
+        # Sonido de notificacion #TODO al igual que para cada una de las notificaciones 
+        #FIXME tambien puede ser un sonido de ventana con un mensaje asi como nota
 
         # #FIXME Dionyss llega a la casa, en lugar de invitar afuera (Pholis aun no esta preparado para salir por su cuenta)
     
         notificacion_pc "Tienes un mensaje" with hpunch
-        Pholis "¿eh?... ¿Un mensaje?"
+        #Pholis "¿eh?... ¿Un mensaje?"
+        Pholis "¿Que ha sido eso?"
         show image "images/prologo/prologo_techo_pholis.png" with dissolve
         notificacion_pc "Dionyss: Hola Pholis, ¿como has estado?"
         Pholis "¿Dionyss?, quien es ese?"
@@ -285,6 +290,15 @@ label start:
         Pholis "¿De que habla?, no lo recuerdo"
         stop music
         "TODO NOT FINISHED"
+
+        #luego de mensaje - nota
+
+        Pholis "Sa-¿salir?"
+        Pholis "Cuando fue la ultima vez que..."
+
+        #Imagenes de afuera asi bien distorisionadas crazy 
+        Pholis "Como sea, no es mas que una broma ¿no es asi?"
+        Pholis "no es como que alguien me conozca... "
         $ renpy.save("prologue") # Save game for avoiding lose information
 
 
@@ -298,9 +312,43 @@ label start:
         #TODO Dionyss llega a la casa 
 
         label escena_1_cap1:
-            "Pholis abre los ojos atemorizado por lo de la vez anterior"
+            #Efecto de abrir los ojos con desenfoque 
+            #Pholis "El de ayer quien habra sido Dionyss, no me suena de nada"
+            #track 3
+            
             show image "images/prologo/prologo_cuarto_2_pholis.png"
-            Pholis "El de ayer quien habra sido Dionyss, no me suena de nada"
+            Pholis "..."
+            Pholis "No dejo de sentirme observado."
+            Pholis "Cada dia se intensifica mas esta horrible sensacion"
+            Pholis "Y la nota de ayer, ¿Por que?"
+            Pholis "¿Nunca me dejaran en paz?"
+            Pholis "..."
+            
+            Pholis "debo tranquilizarme."
+            Pholis "Seguire con lo de siempre."
+            #Cambio a imagen de pc
+            show image "images/prologo/prologo_cuarto_pholis.png"
+            
+            Pholis "..."
+            Pholis "..."
+            Pholis "Pronto..."
+            Pholis "Todo aca-"
+
+            #sonido de puerta sonando track 2 + latido
+
+            Pholis "¿O-Otra vez?"
+            Pholis "¿Esque nunca se cansa?"
+            Pholis "¿Por que? por lo..."
+            Pholis "..."
+            #mas instensificado el knock knock 
+            Pholis "No parece que se vaya a detener pronto"
+            Pholis "¿Que deberia hacer?"
+
+            #Dionyss llega a la casa 
+            #opcion de abrir o ignorar
+
+            #abrir tendra animacion
+            #ignorar solo pasara el dia 
 
             #FIXME Pholis aun no esta preparado para salir solo 
             Pholis "Estoy pensado si salir un rato afuera, hoy me siento con la mente extraña"
