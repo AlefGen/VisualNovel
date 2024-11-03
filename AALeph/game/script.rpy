@@ -189,7 +189,7 @@ label start:
                         Pholis "¿Qu- Quien habla?"
 
 
-                        Sombra "No m̡̬̬̼̺̂̔́͞e͉͕͓̬̫̠͓̬͕͚̖̼̼̟̎ͣ̀̀̐̋́ͧ̃̓ͩ̃ͫͪ̋̿̏̽ͧͬ ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cuṵ̶̦̤̬̮̼̹̙͙͕̲̎ͮ̽̎̐̿ͨ̒̂ͨ̎̂̽̆͑̀ͤͬͦ̚͜͜͡ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅd̏̈́̅das_̺͙̘͂̽̇̍ͨ̍͐͋? ⎎⌾⍦Ma ⍦t"
+                        Sombra "No m̡̬̬̼̺̂̔́͞e͉͕͓̬̫̠͓̬͕͚̖̼̼̟̎ͣ̀̀̐̋́ͧ̃̓ͩ̃ͫͪ̋̿̏̽ͧͬ ȓ͞ȩ̶̪̞͕̰̺̥̺͇̳͇̀̂̽̉̉͌̊͊̐̽ͨ̐ͭͧͥ͌ͦ̆̀ͨ̕͜͝͞cuṵ̶̦̤̬̮̼̹̙͙͕̲̎ͮ̽̎̐̿ͨ̒̂ͨ̎̂̽̆͑̀ͤͬͦ̚͜͜͡ḛ̶̵̢̮͚̪̞̞͖͉̪͓̰͕̭̮̞͖̟̥̅̀͊̇̀̆͗͆́ͤ́̓̍̿̚͝ṟ̶̵̘̲̠̜̜͚̥̱ͥ͌́͛ͣ̉̌͒̋̏̄̈́ͫ͠ͅd̏̈́̅das_̺͙̘͂̽̇̍ͨ̍͐͋? ⎎⌾⍦Ma ⍦"
 
                         Pholis "¿?"
 
@@ -214,6 +214,7 @@ label start:
 
                         
                         #imagen alucinacion 
+                        Pholis "..."
                     "Colgar":
                         jump fin_escena
 
@@ -231,6 +232,7 @@ label start:
             #se detiene el sonido de latido + sonido de respirar como calmado??
             Pholis "¿Por qué?"
             Pholis "¿Cuando acabara todo esto?"
+            Pholis "..."
             Pholis "Volvere a lo mio, debo tranquilizarme."
 
 
@@ -252,9 +254,9 @@ label start:
         Pholis "¿E-eh que fue eso?"
         with hpunch
         "Pholis, te dije que despiertes"
-        Pholis "¿Quien eres?"
-        with hpunch
-        "Tu me conoces bien..."
+        #Pholis "¿Quien eres?"
+        #with hpunch
+        #"Tu me conoces bien..."
         Pholis "..."
         show image "images/prologo/prologo_cuarto_pholis.png"
         play music "audio/Track1.mp3"
@@ -280,8 +282,11 @@ label start:
 
         # #FIXME Dionyss llega a la casa, en lugar de invitar afuera (Pholis aun no esta preparado para salir por su cuenta)
     
-        notificacion_pc "Tienes un mensaje" with hpunch
-        #Pholis "¿eh?... ¿Un mensaje?"
+        #notificacion_pc "Tienes un mensaje" with hpunch
+        #sonido de tocar puerta, en lugar de celular 
+        #se escucha una voz familiar afuera llamando a pholis "ey pholis " 
+        
+        #deja una nota en la puerta - no se entiende nada mas que un "quieres salir"
         Pholis "¿Que ha sido eso?"
         show image "images/prologo/prologo_techo_pholis.png" with dissolve
         notificacion_pc "Dionyss: Hola Pholis, ¿como has estado?"
@@ -290,6 +295,7 @@ label start:
         Pholis "¿De que habla?, no lo recuerdo"
         stop music
         "TODO NOT FINISHED"
+        #knock knock puerta
 
         #luego de mensaje - nota
 
@@ -299,6 +305,17 @@ label start:
         #Imagenes de afuera asi bien distorisionadas crazy 
         Pholis "Como sea, no es mas que una broma ¿no es asi?"
         Pholis "no es como que alguien me conozca... "
+        #mira por la ventana 
+        Pholis "..." #latido tactico xkibidi
+        Pholis "¿Quien es ese?"
+        Pholis "¿Es el quien estaba tocando?"
+        Pholis "N-no...es... imposible... "
+        #desaparece
+        Pholis "..."
+        Pholis "S-se abra equivocado de casa..."
+        Pholis "..." #se relaja mi pana
+        Pholis "En fin, volvere a lo mio"
+        #otra animacion de pasar tiempo??
         $ renpy.save("prologue") # Save game for avoiding lose information
 
 
@@ -312,7 +329,7 @@ label start:
         #TODO Dionyss llega a la casa 
 
         label escena_1_cap1:
-            #Efecto de abrir los ojos con desenfoque 
+            #Efecto de abrir los ojos con desenfoque - palabras en la pantalla al despsertar que desaparecen rapidamente - algun mensaje
             #Pholis "El de ayer quien habra sido Dionyss, no me suena de nada"
             #track 3
             
@@ -321,7 +338,7 @@ label start:
             Pholis "No dejo de sentirme observado."
             Pholis "Cada dia se intensifica mas esta horrible sensacion"
             Pholis "Y la nota de ayer, ¿Por que?"
-            Pholis "¿Nunca me dejaran en paz?"
+            Pholis "¿Nunca me dejara en paz?"
             Pholis "..."
             
             Pholis "debo tranquilizarme."
@@ -338,16 +355,25 @@ label start:
 
             Pholis "¿O-Otra vez?"
             Pholis "¿Esque nunca se cansa?"
-            Pholis "¿Por que? por lo..."
-            Pholis "..."
+            Pholis "¿Por que? pense que..."
             #mas instensificado el knock knock 
+            Pholis "..."
+            #
             Pholis "No parece que se vaya a detener pronto"
             Pholis "¿Que deberia hacer?"
             menu:
                 "Abrir":
+                    Pholis "¿Estoy... seguro de esto?"
+                    Pholis "No creo que..."
+                    #tocar puerta mas duro
+                    Pholis "No, Debo hacerlo, el me entendera..."
                     jump habitacion_fuera
 
                 "Ignorar":
+                    Pholis "No, no no... aun no"
+                    #toca de puerta mas duro + gritos
+                    #imagen de pholis asi de bolita xdd bien crazy esperando a que acabe 
+                    Pholis "Perdon..."
                     jump se_queda_adentro
 
             #Dionyss llega a la casa 
@@ -357,48 +383,35 @@ label start:
             #ignorar solo pasara el dia 
 
             #FIXME Pholis aun no esta preparado para salir solo 
-            Pholis "Estoy pensado si salir un rato afuera, hoy me siento con la mente extraña"
+            #Pholis "Estoy pensado si salir un rato afuera, hoy me siento con la mente extraña"
             
-            menu:
-                "Salir de la habitacion":
-                    jump habitacion_fuera
-
-                "Quedarse adentro":
-                    jump se_queda_adentro
+         
 
 
             label se_queda_adentro:
-                Pholis "{i}a para que salir … mejor me quedo aca … como siempre he estado{/i}"
+                Pholis "{i}Mejor me quedo aca … como siempre he estado...{/i}"
                 # TODO Update de image of the room as the dialog says
                 ". . ."
                 #TODO update 2 of room 
 
-                menu:
-                    "Salir de la habitacion":
-                        jump habitacion_fuera
+               
 
-                    "Quedarse":
-                    
-                        if locura > 0:
-                            jump suicide_ending
-                        else:
-                            jump mala_idea
-
-                label mala_idea:
-                    #TODO Mostrar cuarto totalmente desfigurado
-                    Sombra "Pholis..."
-                    $ locura += 3
-                    with hpunch
-                    "Te lo advertimos"
-                    Pholis "Q-que esta pasando, ayuda!"
-                    Sombra "Sabiamos"
-                    "Pholis atemorizado corre hacia afuera"
-                    jump habitacion_fuera
+                
                     
 
 
                 label suicide_ending:
-                    Pholis "{i}Necesito-o{/i}"
+                    #efecto abrir ojos - se ve sombra
+
+                    Pholis "{i}¡NO! Alejate de mi{/i}"
+                    Pholis "Ya me canse de esto"
+                    Pholis "Dejame en paz!"
+                    #se acerca la sombra
+                    Pholis "Deja de mirarme"
+                    Pholis "Lo que sucedio fue... FUE TU CULPA!"
+                
+                    #animacion de Pholis coje un cuchillo
+                    #TODO creashea el juego xddd
                     #TODO Fade the room image 
                     scene black with fade
                     centered_text "{size=+10}{font=fonts/horror_font_2.ttf}{b}No hay escapatoria{/b}{/font}"
@@ -409,6 +422,8 @@ label start:
                     $ renpy.load("prologue")
 
             label habitacion_fuera:
+                #animacion abrir puertta - la historia esta guida por las voces y recuerdos de dionyss
+                #pholis sigue a esas voces que lo llevan hasta el lugar del accidente
                 show image "images/Capitulo1/capitulo1_ciudad_1.png" with fade 
                 Pholis "{i}No recuerdo que el ayer fuese tan distinto al hoy{/i}"
                 Pholis "Veo como personas, pero fragmentadas en colores"
