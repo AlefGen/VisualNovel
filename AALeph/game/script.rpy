@@ -65,6 +65,7 @@ init python:
     locura = 0
     muertes = 0
     conexion_con_sombra = 0
+    crash_game = 0
 
 
 
@@ -412,6 +413,9 @@ label start:
                 
                     #animacion de Pholis coje un cuchillo
                     #TODO creashea el juego xddd
+                    # a sus ordenes
+                    $ renpy.quit(relaunch=True)
+
                     #TODO Fade the room image 
                     scene black with fade
                     centered_text "{size=+10}{font=fonts/horror_font_2.ttf}{b}No hay escapatoria{/b}{/font}"
